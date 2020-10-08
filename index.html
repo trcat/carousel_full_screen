@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Screen Carousel</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./swiper-bundle.min.css">
+  <script src="./swiper-bundle.min.js"></script>
+  <style>
+    .swiper-container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper"></div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      var wrapper = document.querySelector('.swiper-wrapper');
+      var slideCount = 3;
+      for (var i = 1; i <= slideCount; i++) {
+        var item = document.createElement('div');
+        item.classList.add('swiper-slide');
+        item.style.backgroundImage = 'url(./image/' + i + '.jpg)';
+        item.style.backgroundRepeat = 'no-repeat';
+        item.style.backgroundSize = 'cover';
+        wrapper.appendChild(item);
+      }
+      wrapper.append()
+      var mySwiper = new Swiper('.swiper-container', {
+        loop: true, // 循环轮播
+        effect: 'fade', // 设置淡入淡出的变换方式
+        keyboard: true, // 支持键盘控制
+        autoplay: {
+          delay: 2000, // 自动切换间隔时间，单位毫秒
+          disableOnInteraction: false // 手动滑动后是否停止自动轮播
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>
