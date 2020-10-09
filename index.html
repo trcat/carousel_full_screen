@@ -13,11 +13,20 @@
       width: 100vw;
       height: 100vh;
     }
+
+    .audio-wrap {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+    }
   </style>
 </head>
 
 <body>
-  <audio src="./audio/1.mp3" preload="auto" autoplay loop ></audio>
+  <div class="audio-wrap">
+    <audio src="./audio/1.mp3" controls autoplay loop></audio>
+  </div>
   <div class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper"></div>
@@ -26,25 +35,31 @@
   <script>
     window.onload = function () {
       var wrapper = document.querySelector('.swiper-wrapper');
-      var slideCount = 3;
+      var slideCount = 31;
       for (var i = 1; i <= slideCount; i++) {
         var item = document.createElement('div');
         item.classList.add('swiper-slide');
         item.style.backgroundImage = 'url(./image/' + i + '.jpg)';
         item.style.backgroundRepeat = 'no-repeat';
-        item.style.backgroundSize = 'cover';
+        item.style.backgroundSize = 'contain';
+        item.style.backgroundPosition = 'center';
         wrapper.appendChild(item);
       }
       wrapper.append()
       var mySwiper = new Swiper('.swiper-container', {
         loop: true, // 循环轮播
         effect: 'fade', // 设置淡入淡出的变换方式
+        fadeEffect: {
+          crossFade: true,
+        },
         keyboard: true, // 支持键盘控制
         autoplay: {
           delay: 2000, // 自动切换间隔时间，单位毫秒
           disableOnInteraction: false // 手动滑动后是否停止自动轮播
         }
       })
+
+      // 检测 audio 是否处于自动播放状态
     }
   </script>
 </body>
