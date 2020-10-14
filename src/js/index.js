@@ -6,7 +6,7 @@ window.onload = function () {
     item.classList.add("swiper-slide");
     item.style.backgroundImage = "url(./src/image/" + i + ".jpg)";
     item.style.backgroundRepeat = "no-repeat";
-    item.style.backgroundSize = "contain";
+    item.style.backgroundSize = "cover";
     item.style.backgroundPosition = "center";
     wrapper.appendChild(item);
   }
