@@ -1,6 +1,6 @@
 window.onload = function () {
   var wrapper = document.querySelector(".swiper-wrapper");
-  var slideCount = 31;
+  var slideCount = 3;
   for (var i = 1; i <= slideCount; i++) {
     var item = document.createElement("div");
     item.classList.add("swiper-slide");
