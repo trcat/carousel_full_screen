@@ -4,7 +4,7 @@ window.onload = function () {
   for (var i = 1; i <= slideCount; i++) {
     var item = document.createElement("div");
     item.classList.add("swiper-slide");
-    item.style.backgroundImage = "url(./image/" + i + ".jpg)";
+    item.style.backgroundImage = "url(./src/image/" + i + ".jpg)";
     item.style.backgroundRepeat = "no-repeat";
     item.style.backgroundSize = "contain";
     item.style.backgroundPosition = "center";
