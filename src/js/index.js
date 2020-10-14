@@ -10,7 +10,6 @@ window.onload = function () {
     item.style.backgroundPosition = "center";
     wrapper.appendChild(item);
   }
-  wrapper.append();
   var mySwiper = new Swiper(".swiper-container", {
     loop: true, // 循环轮播
     effect: "fade", // 设置淡入淡出的变换方式
